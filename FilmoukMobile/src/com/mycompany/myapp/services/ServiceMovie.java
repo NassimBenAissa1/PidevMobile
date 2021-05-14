@@ -91,7 +91,7 @@ public class ServiceMovie {
             
        
    }    catch (IOException ex) {
-            ex.printStackTrace();
+           
         }
         return movies;
       }

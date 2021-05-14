@@ -9,7 +9,6 @@ package com.mycompany.myapp.entities;
  *
  * @author elyes
  */
-
 public class Movie {
     private int idFilm,duree,idCat;
     private float rated;
