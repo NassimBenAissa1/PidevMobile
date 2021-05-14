@@ -10,27 +10,11 @@ package com.mycompany.myapp.entities;
  * @author nassim
  */
 public class User {
-    
-     private int id;
+        private int id;
         private String username ;
         private String password ;
         private String email ;
         private String fname,lname,idcard,phone;
-
-    public User(int id) {
-        this.id = id;
-    }
-    public User(){
-        
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
     
 }
