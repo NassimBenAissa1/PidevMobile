@@ -10,7 +10,7 @@ package com.mycompany.myapp.entities;
  * @author nassim
  */
 public class User {
-<<<<<<< HEAD
+
     
      private int id,blocked;
         private String username ;
@@ -120,13 +120,9 @@ public class User {
     }
 
    
-=======
-        private int id;
-        private String username ;
-        private String password ;
-        private String email ;
-        private String fname,lname,idcard,phone;
->>>>>>> main
+
+     
+
     
     
 }
