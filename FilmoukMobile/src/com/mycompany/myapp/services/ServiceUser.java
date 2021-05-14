@@ -50,13 +50,13 @@ public class ServiceUser {
      public ArrayList<User> parseUsers(String jsonText){
        try {
            users = new ArrayList<>();
-            JSONParser j = new JSONParser();// Instanciation d'un objet JSONParser permettant le parsing du résultat json
+            JSONParser j = new JSONParser();
             Map<String,Object> offresListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
             List<Map<String,Object>> list = (List<Map<String,Object>>)offresListJson.get("root");
             System.out.println(list);
-            //Parcourir la liste des tâches Json
+        
            for(Map<String,Object> obj : list){
-                //Création des tâches et récupération de leurs données
+             
                User t = new User();
                float idUser = Float.parseFloat(obj.get("idUser").toString());
                 t.setId((int)idUser);
@@ -68,8 +68,8 @@ public class ServiceUser {
                 t.setEmail((obj.get("email").toString()));
                 t.setRole((obj.get("role").toString()));
                 
-                //Ajouter la tâche extraite de la réponse Json à la liste
-                System.out.println(t);
+         
+              
                 users.add(t);
            }
             
@@ -78,11 +78,7 @@ public class ServiceUser {
             ex.printStackTrace();
             
         }
-         /*
-            A ce niveau on a pu récupérer une liste des tâches à partir
-        de la base de données à travers un service web
-        
-        */
+       
         return users;
    }
   
@@ -135,7 +131,7 @@ public class ServiceUser {
              Dialog.show("Error","invalid data",new Command("OK"));
            
          }
-        System.out.print(Statics.user+"this is the static var");
+       
    
     }
 }

@@ -25,22 +25,22 @@ import com.mycompany.myapp.utils.Statics;
  *
  * @author Wissem
  */
-public class SignInForm extends Form  {
-       public SignInForm() {
+public class SignUpForm extends Form  {
+       public SignUpForm() {
         /*
         Le paramètre previous définit l'interface(Form) précédente.
         Quelque soit l'interface faisant appel à AddTask, on peut y revenir
         en utilisant le bouton back
         */
-        setTitle("Sign In");
+        setTitle("Sign Up");
         setLayout(BoxLayout.y());
         
         TextField tfName = new TextField("","Username");
         TextField tfPassword= new TextField("", "Password",1,TextField.PASSWORD);
         Button btnValider = new Button("Sign In"+"");
-        Label l = new Label("you don't have an account ?");
-        Button btnSignup= new Button("Sign up");
-        btnSignup.addActionListener(e -> new SignUpForm().show());
+        Label l = new Label("Already Have an account ?");
+        Button btnSignup= new Button("Sign in");
+        btnSignup.addActionListener(e -> new SignInForm().show());
         Container c2 =new Container(new BoxLayout(BoxLayout.X_AXIS));
         c2.add(l);
         c2.add(btnSignup);
