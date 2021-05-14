@@ -11,13 +11,13 @@ package com.mycompany.myapp.entities;
  */
 public class User {
     
-     private int id;
+     private int id,blocked;
         private String username ;
         private String password ;
         private String email ;
-        private String fname,lname,idcard,phone,role,blocked;
+        private String fname,lname,idcard,phone,role;
 
-    public User(int id, String username, String password, String email, String fname, String lname, String idcard, String phone, String role, String blocked) {
+    public User(int id, String username, String password, String email, String fname, String lname, String idcard, String phone, String role, int blocked) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -69,7 +69,7 @@ public class User {
         return role;
     }
 
-    public String getBlocked() {
+    public int getBlocked() {
         return blocked;
     }
 
@@ -114,7 +114,7 @@ public class User {
         this.role = role;
     }
 
-    public void setBlocked(String blocked) {
+    public void setBlocked(int blocked) {
         this.blocked = blocked;
     }
 

@@ -17,6 +17,7 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.myapp.entities.Task;
 import com.mycompany.myapp.services.ServiceTask;
 import com.mycompany.myapp.services.ServiceUser;
+import com.mycompany.myapp.utils.Statics;
 
 /**
  *
@@ -33,17 +34,37 @@ public class SignInForm extends Form  {
         setLayout(BoxLayout.y());
         
         TextField tfName = new TextField("","Username");
-        TextField tfPassword= new TextField("", "Password");
-        Button btnValider = new Button("Sing In"
-                + "");
+        TextField tfPassword= new TextField("", "Password",1,TextField.PASSWORD);
+        Button btnValider = new Button("Sign In"+"");
         
-        btnValider.addActionListener(e -> 
-        { System.out.print("aa");
-            ServiceUser.getInstance().SignIn(tfName.getText().toString(),tfPassword.getText().toString());
-        });
+       btnValider.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+              
+               {
+                if ((tfName.getText().length()==0)||(tfPassword.getText().length()==0))
+                    Dialog.show("Alert", "Please fill all the fields", new Command("OK"));
+                else
+                {
+                
+                       
+                         ServiceUser.getInstance().SignIn(tfName.getText().toString(),tfPassword.getText().toString());
+                        
+                      
+                   
+                    
+                }
+                
+               }
            
+            }
+        });
+   
         
         addAll(tfName,tfPassword,btnValider);
+     
+                
+    
        
                 
     }

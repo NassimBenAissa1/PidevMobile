@@ -10,12 +10,15 @@ import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
+import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Task;
 import com.mycompany.myapp.entities.User;
 import com.mycompany.myapp.gui.HomeForm;
+import com.mycompany.myapp.gui.ListUsers;
+import com.mycompany.myapp.gui.SignInForm;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,14 +30,16 @@ import java.util.Map;
  * @author Wissem
  */
 public class ServiceUser {
-         public static ServiceUser instance=null;
- User u=new User();
-        private ConnectionRequest req;
+  public static ServiceUser instance=null;
+    public boolean resultOK;
+    private ConnectionRequest req;
+    private User user;
+      public ArrayList<User> users;
 
-    private ServiceUser()
-     {
-           req = new ConnectionRequest();
-     }
+    private ServiceUser() {
+         req = new ConnectionRequest();
+    }
+
     public static ServiceUser getInstance() {
         if (instance == null) {
             instance = new ServiceUser();
@@ -42,98 +47,95 @@ public class ServiceUser {
         return instance;
     }
     
-     public User parseUser(String jsonText){
-        User u= new User();
-         try {
+     public ArrayList<User> parseUsers(String jsonText){
+       try {
+           users = new ArrayList<>();
             JSONParser j = new JSONParser();// Instanciation d'un objet JSONParser permettant le parsing du résultat json
-     
-            /*
-                On doit convertir notre réponse texte en CharArray à fin de
-            permettre au JSONParser de la lire et la manipuler d'ou vient 
-            l'utilité de new CharArrayReader(json.toCharArray())
-            
-            La méthode parse json retourne une MAP<String,Object> ou String est 
-            la clé principale de notre résultat.
-            Dans notre cas la clé principale n'est pas définie cela ne veux pas
-            dire qu'elle est manquante mais plutôt gardée à la valeur par defaut
-            qui est root.
-            En fait c'est la clé de l'objet qui englobe la totalité des objets 
-                    c'est la clé définissant le tableau de tâches.
-            */
-            Map<String,Object> tasksListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
-            
-              /* Ici on récupère l'objet contenant notre liste dans une liste 
-            d'objets json List<MAP<String,Object>> ou chaque Map est une tâche.               
-            
-            Le format Json impose que l'objet soit définit sous forme
-            de clé valeur avec la valeur elle même peut être un objet Json.
-            Pour cela on utilise la structure Map comme elle est la structure la
-            plus adéquate en Java pour stocker des couples Key/Value.
-            
-            Pour le cas d'un tableau (Json Array) contenant plusieurs objets
-            sa valeur est une liste d'objets Json, donc une liste de Map
-            */
-            List<Map<String,Object>> list = (List<Map<String,Object>>)tasksListJson.get("root");
-          
+            Map<String,Object> offresListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+            List<Map<String,Object>> list = (List<Map<String,Object>>)offresListJson.get("root");
+            System.out.println(list);
             //Parcourir la liste des tâches Json
-            for(Map<String,Object> obj : list){
+           for(Map<String,Object> obj : list){
                 //Création des tâches et récupération de leurs données
+               User t = new User();
+               float idUser = Float.parseFloat(obj.get("idUser").toString());
+                t.setId((int)idUser);
                 
-                float id = Float.parseFloat(obj.get("idUser").toString());
-                 System.out.println(id);
-              u.setId((int)id);
-                u.setEmail(obj.get("email").toString());
-             //   t.setStatus(((int)Float.parseFloat(obj.get("status").toString())));
-               // t.setName(obj.get("name").toString());
+                float blocked = Float.parseFloat(obj.get("blocked").toString());
+                t.setBlocked((int)blocked);
+                t.setUsername((obj.get("username").toString()));
+                t.setPassword((obj.get("password").toString()));
+                t.setEmail((obj.get("email").toString()));
+                t.setRole((obj.get("role").toString()));
+                
                 //Ajouter la tâche extraite de la réponse Json à la liste
-             //   tasks.add(t);
-            }
-          
+                System.out.println(t);
+                users.add(t);
+           }
+            
             
         } catch (IOException ex) {
-           
+            ex.printStackTrace();
+            
         }
          /*
             A ce niveau on a pu récupérer une liste des tâches à partir
         de la base de données à travers un service web
         
         */
-     //     System.out.println(Statics.user);
-   
-        return u ;     
-    }
+        return users;
+   }
+  
     
-    public void SignIn(String username , String password) {
-      System.out.print(password);
-        String url = "http://127.0.0.1:8000/users/authmobile?username=admin&password=admiin";
-      
+        public void  SignIn(String username , String password){
+        String url = Statics.BASE_URL+"/users/allusersmobile";
         req.setUrl(url);
-         req.addResponseListener( (e)->{
-             JSONParser j = new  JSONParser();
-             
-            String json= new String(req.getResponseData())+"";
-            try {
-            if ("auth error".equals(json)) {
-                Dialog.show("auth mochkla","aa","ok",null);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                users = parseUsers(new String(req.getResponseData()));
+                req.removeResponseListener(this);
             }
-            else 
+        });
+       
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        
+    
+        int test=0;
+         for (int i = 0; i < users.size(); i++) {
+            if((username.equals(users.get(i).getUsername()))&&(password.equals(users.get(i).getPassword())))
             {
-                System.out.print("data==="+json);
-                 Map<String,Object> user = j.parseJSON(new CharArrayReader(json.toCharArray()));
-
-                   if (user.size()>0)
-                 {
-                     new HomeForm().show();
-                 }
-            }
-            }catch(Exception ex)
+            
+          
+            if((users.get(i).getBlocked()==1))
             {
-                
+                Dialog.show("Error","account blocked",new Command("OK"));
+                test++;
+                break ;
             }
-             
+            else
+            { if(!("salle".equals(users.get(i).getRole()))) 
+            { Statics.user.setUsername(users.get(i).getUsername()); 
+               test++;
+               new HomeForm().show();
+               }
+            else
+            {
+               Dialog.show("Error","Sorry you can't use a Room account",new Command("OK"));
+               test++;
+              
+            }
+            }
+            }
+            
+        }
+         if (test==0)
+         {
+             Dialog.show("Error","invalid data",new Command("OK"));
+           
          }
-         );
-         NetworkManager.getInstance().addToQueueAndWait(req);
-         System.out.print(req.getResponseCode());
+        System.out.print(Statics.user+"this is the static var");
+   
     }
 }
