@@ -1,0 +1,149 @@
+[0514/161531.132:INFO:CONSOLE(0)] "A cookie associated with a cross-site resource at http://www.youtube.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.", source: https://cn1app/streams/1 (0)
+[0514/161621.137:INFO:CONSOLE(0)] "A cookie associated with a cross-site resource at https://youtube.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.", source: https://cn1app/streams/1 (0)
+[0514/161621.138:INFO:CONSOLE(0)] "Refused to display 'https://m.youtube.com/watch?v=dV9fKsjkJDQ&ab_channel=carwowcarwowValid%C3%A9' in a frame because it set 'X-Frame-Options' to 'sameorigin'.", source: https://cn1app/streams/1 (0)
+[0514/163138.798:INFO:CONSOLE(0)] "Refused to display 'https://www.google.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'.", source: https://cn1app/streams/1 (0)
+[0514/164122.130:INFO:CONSOLE(1)] "Unrecognized feature: 'clipboard-write'.", source: https://cn1app/streams/1 (1)
+[0514/164135.136:INFO:CONSOLE(0)] "A cookie associated with a cross-site resource at http://www.youtube.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.", source: https://cn1app/streams/1 (0)
+[0514/164223.131:INFO:CONSOLE(0)] "A cookie associated with a cross-site resource at http://www.youtube.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.", source: https://cn1app/streams/1 (0)
+[0514/164458.139:INFO:CONSOLE(0)] "A cookie associated with a cross-site resource at http://www.youtube.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.", source: https://cn1app/streams/1 (0)
+[0514/165313.407:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/165313.407:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/165926.679:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/170029.622:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/170711.828:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 17
+[0514/171957.185:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/171957.185:INFO:CONSOLE(2)] "The value "1920px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/171957.185:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/171957.185:INFO:CONSOLE(2)] "The value "1920px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/172136.053:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/172136.053:INFO:CONSOLE(2)] "The value "1920px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/172526.099:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/172526.099:INFO:CONSOLE(2)] "The value "1920px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/172722.570:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/172722.590:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/172722.622:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/172723.028:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/172723.029:INFO:CONSOLE(2)] "The value "1920px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/172810.061:INFO:CONSOLE(2)] "The value "1920px" for key "width" was truncated to its numeric prefix.", source:  (2)
+[0514/172810.061:INFO:CONSOLE(2)] "The value "720px" for key "height" was truncated to its numeric prefix.", source:  (2)
+[0514/173214.194:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/173214.198:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/173956.207:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/173956.370:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/174105.946:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/174106.162:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/174106.162:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/174211.471:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/174211.471:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/175841.568:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/175942.747:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/175944.277:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/181633.276:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/181709.367:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/181727.186:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/182747.210:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/182928.899:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/183129.482:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/183241.153:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/183643.230:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/183941.483:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/184456.993:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/184631.462:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/184711.304:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/184753.316:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/184755.313:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 17
+[0514/185319.051:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/185415.855:ERROR:browser_host_impl.cc(1691)] Invalid URL passed to CefBrowserHostImpl::LoadMainFrameURL: <iframe src=\"https://www.youtube.com/embed/dV9fKsjkJDQ\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>
+[0514/190412.643:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/190751.143:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/190751.144:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/191828.164:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/191828.465:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/191828.466:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/192039.474:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/192039.517:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/192151.412:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/192151.476:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/192236.778:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/192236.781:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/192534.086:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/192534.399:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/192534.399:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/192534.399:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/192557.075:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/192557.075:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/192655.462:INFO:CONSOLE(0)] "Invalid 'X-Frame-Options' header encountered when loading 'https://ogs.google.com/widget/app/so?bc=1&origin=https%3A%2F%2Fwww.google.com&cn=app&pid=1&spid=1&hl=ar': 'ALLOW-FROM https://www.google.com' is not a recognized directive. The header will be ignored.", source: https://www.google.com/ (0)
+[0514/192839.396:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/192839.397:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/192839.397:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/192909.118:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/192909.118:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0514/193441.630:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 17
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 19
+[0514/193441.677:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 21
+[0514/193609.712:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/193609.712:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/202009.357:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/202009.388:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/203224.643:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/203224.702:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/203224.738:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/203319.187:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/203319.195:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/203319.215:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/203341.800:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/204200.298:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 1
+[0514/204200.305:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/204200.394:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/204334.060:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0514/204334.087:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/204334.090:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0514/204334.097:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/204334.103:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0514/204334.103:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0514/204334.104:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0514/204334.105:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 17
+[0514/204334.203:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 17
+[0514/204334.204:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 19
+[0514/204334.204:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 21
+[0514/204759.724:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 3
+[0514/204759.840:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0514/204759.936:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0514/204759.938:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/011047.083:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0515/011047.142:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/011047.168:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0515/011139.170:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/011139.389:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0515/011213.267:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0515/011213.333:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/011213.490:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0515/011605.065:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 5
+[0515/011605.127:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0515/011605.127:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/012745.246:INFO:CONSOLE(787)] "Uncaught [object Object]", source: https://www.youtube.com/s/player/b2ff0586/player_ias.vflset/en_US/base.js (787)
+[0515/013531.838:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0515/013821.540:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0515/014616.002:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0515/014737.111:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0515/020836.397:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0515/021405.755:INFO:CONSOLE(0)] "ResizeObserver loop limit exceeded", source: https://www.youtube.com/embed/eHCAgSuLog4 (0)
+[0515/022018.862:INFO:CONSOLE(787)] "Uncaught [object Object]", source: https://www.youtube.com/s/player/b2ff0586/player_ias.vflset/en_US/base.js (787)
+[0515/173016.424:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0515/184805.221:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 11
+[0515/185314.097:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 7
+[0515/185314.301:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 9
+[0515/185702.339:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0515/185702.370:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 15
+[0515/185739.540:WARNING:spdy_session.cc(3365)] Received HEADERS for invalid stream 13
+[0515/214210.991:WARNING:dns_config_service_win.cc(700)] Failed to read DnsConfig.
+[0515/214210.992:WARNING:dns_config_service_win.cc(700)] Failed to read DnsConfig.
+[0515/214216.005:WARNING:dns_config_service_win.cc(700)] Failed to read DnsConfig.
+[0515/214216.005:WARNING:dns_config_service_win.cc(700)] Failed to read DnsConfig.
