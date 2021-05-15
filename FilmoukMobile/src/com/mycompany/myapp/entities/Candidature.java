@@ -85,7 +85,15 @@ public class Candidature {
         this.cvpath = cvpath;
         this.etatCandidature = etatCandidature;
     }
+
+    public Candidature(int id_user, int id_offre, String cvpath ,String description) {
+        this.id_user = id_user;
+        this.id_offre = id_offre;
+        this.description = description;
+        this.cvpath = cvpath;
+    }
   
+    
  
     
     
