@@ -69,7 +69,7 @@ public class ServiceMovie {
                 m.setLang(obj.get("language").toString());
                 m.setNom(obj.get("nomFilm").toString());
                 m.setDate(obj.get("date").toString());
-                m.setUtube(obj.get("nomFilm").toString());        
+                m.setUtube(obj.get("utube").toString());        
                 m.setDesc((obj.get("description").toString()));
                
                 m.setImgUrl(obj.get("image").toString());

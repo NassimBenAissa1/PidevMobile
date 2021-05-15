@@ -8,9 +8,12 @@ import com.codename1.ui.Form;
 import com.codename1.components.ImageViewer;
 import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
+import static com.codename1.ui.Component.BOTTOM;
+import static com.codename1.ui.Component.RIGHT;
 import com.codename1.ui.Container;
 import com.codename1.ui.Display;
 import com.codename1.ui.EncodedImage;
+import com.codename1.ui.Font;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
@@ -18,7 +21,9 @@ import com.codename1.ui.Label;
 import com.codename1.ui.URLImage;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.plaf.Style;
 import com.mycompany.myapp.entities.Movie;
 import com.mycompany.myapp.services.ServiceMovie;
 import java.io.IOException;
@@ -64,7 +69,7 @@ public class ListMovieForm extends Form {
           
          
       //   Image placeholder = Image.createImage(label.getIcon().getWidth(), label.getIcon().getWidth(), 0xbfc9d2);
-//EncodedImage encImage = EncodedImage.createFromImage(placeholder, false);
+      //EncodedImage encImage = EncodedImage.createFromImage(placeholder, false);
          int deviceWidth = Display.getInstance().getDisplayWidth();
          Image placeholder = Image.createImage(deviceWidth/5, deviceWidth /5, 0xbfc9d2); 
          EncodedImage encImage = EncodedImage.createFromImage(placeholder, false);
@@ -83,6 +88,8 @@ public class ListMovieForm extends Form {
             btnt.addActionListener(e -> new SingleMovie(current,m).show());
                                   
                     
+                    
+                    
                                    
           
             c2.setLeadComponent(btnt);
@@ -97,6 +104,10 @@ public class ListMovieForm extends Form {
              
            
          }
+         
+         
+         
+         
          
          System.out.println("****************");
          System.out.println(i);
