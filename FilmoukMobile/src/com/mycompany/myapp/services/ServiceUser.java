@@ -13,11 +13,8 @@ import com.codename1.io.NetworkManager;
 import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.events.ActionListener;
-import com.codename1.ui.util.Resources;
-import com.mycompany.myapp.entities.Task;
 import com.mycompany.myapp.entities.User;
 import com.mycompany.myapp.gui.HomeForm;
-import com.mycompany.myapp.gui.ListUsers;
 import com.mycompany.myapp.gui.SignInForm;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
@@ -36,7 +33,7 @@ public class ServiceUser {
     private User user;
       public ArrayList<User> users;
 
-    private ServiceUser() {
+   public ServiceUser() {
          req = new ConnectionRequest();
     }
 
@@ -134,4 +131,26 @@ public class ServiceUser {
        
    
     }
+        
+        
+        public void SignUp(User u) {
+        
+        String url = Statics.BASE_URL + "/users/addusermobile?username=" + u.getUsername() + "&email="+u.getEmail()+"&phone="+u.getPhone()+"&password="+u.getPassword()+
+                "&firstname="+u.getFname()+"&lastname="+u.getLname()+"&idcard="+u.getIdcard();
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; 
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        Dialog.show("success","account created",new Command("OK"));
+        new SignInForm().show();
+       
+    }
+        
+      
 }

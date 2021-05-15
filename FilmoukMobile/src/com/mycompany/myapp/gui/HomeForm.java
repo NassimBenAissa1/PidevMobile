@@ -30,7 +30,8 @@ public class HomeForm extends Form {
         Button btnAddTask = new Button("Add Task");
         Button btnListTasks = new Button("List Tasks");
         Button btnAddOffres = new Button("Ajouter Offre");
-          Button btnListOffres = new Button("List Offre");
+        Button btnListOffres = new Button("List Offre");
+        Button btnListRooms = new Button("Room List");
 
      
 
@@ -40,15 +41,16 @@ public class HomeForm extends Form {
         
         btnAddTask.addActionListener(e -> new AddTaskForm(current).show());
         btnListTasks.addActionListener(e -> new ListTasksForm(current).show());
-         btnAddOffres.addActionListener(e -> new AddOffreForm(current).show());
-          btnListOffres.addActionListener(e -> new ListOffreForm(current).show());
+        btnAddOffres.addActionListener(e -> new AddOffreForm(current).show());
+        btnListOffres.addActionListener(e -> new ListOffreForm(current).show());
+        btnListRooms.addActionListener(e -> new ListRoomsForm(current).show());
 
        
      
 
          btnListMovies.addActionListener(e -> new ListMovieForm(current).show());
          
-        addAll(btnAddTask, btnListTasks,btnAddOffres,btnListOffres,btnListMovies);
+        addAll(btnAddTask, btnListTasks,btnAddOffres,btnListOffres,btnListMovies,btnListRooms);
 
 
     }

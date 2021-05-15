@@ -17,6 +17,7 @@ import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.myapp.entities.Task;
+import com.mycompany.myapp.entities.User;
 import com.mycompany.myapp.services.ServiceTask;
 import com.mycompany.myapp.services.ServiceUser;
 import com.mycompany.myapp.utils.Statics;
@@ -34,42 +35,48 @@ public class SignUpForm extends Form  {
         */
         setTitle("Sign Up");
         setLayout(BoxLayout.y());
-        
+        Container c =new Container(new BoxLayout(BoxLayout.Y_AXIS));
         TextField tfName = new TextField("","Username");
         TextField tfPassword= new TextField("", "Password",1,TextField.PASSWORD);
-        Button btnValider = new Button("Sign In"+"");
+        TextField tfEmail = new TextField("","Email");
+        TextField tfFname = new TextField("","First name");
+        TextField tfLname = new TextField("","Last name");
+        TextField tfPhone = new TextField("","Phone number");
+        TextField tfIdcard = new TextField("","Id card number");
+        c.addAll(tfName,tfPassword,tfEmail,tfFname,tfLname,tfPhone,tfIdcard);
+
+        Button btnValider = new Button("Sign Up"+"");
         Label l = new Label("Already Have an account ?");
-        Button btnSignup= new Button("Sign in");
-        btnSignup.addActionListener(e -> new SignInForm().show());
+        Button btnSignIn= new Button("Sign in");
+        btnSignIn.addActionListener(e -> new SignInForm().show());
         Container c2 =new Container(new BoxLayout(BoxLayout.X_AXIS));
         c2.add(l);
-        c2.add(btnSignup);
+        c2.add(btnSignIn);
         
        btnValider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-              
-               {
-                if ((tfName.getText().length()==0)||(tfPassword.getText().length()==0))
+                if ((tfPassword.getText().length()==0)||(tfName.getText().length()==0)||(tfPhone.getText().length()==0))
                     Dialog.show("Alert", "Please fill all the fields", new Command("OK"));
                 else
                 {
-                
-                       
-                         ServiceUser.getInstance().SignIn(tfName.getText().toString(),tfPassword.getText().toString());
-                        
-                      
-                   
+                    try {
+                        User u = new User(0,tfName.getText().toString(),tfPassword.getText().toString(),tfEmail.getText().toString(),tfFname.getText().toString()
+                        ,tfLname.getText().toString(),tfIdcard.getText().toString(),tfPhone.getText().toString(),"client",0);
+                         ServiceUser.getInstance().SignUp(u);
+                         
+                    } catch (NumberFormatException e) {
+                        Dialog.show("ERROR", "Status must be a number", new Command("OK"));
+                    }
                     
                 }
                 
-               }
-           
+                
             }
         });
    
         
-        addAll(tfName,tfPassword,btnValider,c2);
+        addAll(c,btnValider,c2);
      
                 
     
