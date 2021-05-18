@@ -76,7 +76,7 @@ public class ListRoomsForm extends Form {
              final Salle s=salles.get(i);
             
             Button btnt = new Button("");
-           // btnt.addActionListener(e -> new SingleMovie(current,m).show());
+            btnt.addActionListener( e -> new ListRoomsForm(current).show());
                                   
                     
                                    
