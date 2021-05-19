@@ -49,7 +49,7 @@ public class MyApplication {
     }
     
     public void start() {
-        new SignInForm().show();
+        new HomeForm().show();
     }
 
     public void stop() {
