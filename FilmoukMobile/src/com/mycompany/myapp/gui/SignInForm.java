@@ -20,6 +20,7 @@ import com.mycompany.myapp.entities.Task;
 import com.mycompany.myapp.services.ServiceTask;
 import com.mycompany.myapp.services.ServiceUser;
 import com.mycompany.myapp.utils.Statics;
+import java.util.Random;
 
 /**
  *
@@ -40,6 +41,8 @@ public class SignInForm extends Form  {
         Button btnValider = new Button("Sign In"+"");
         Label l = new Label("you don't have an account ?");
         Button btnSignup= new Button("Sign up");
+                Button btnForgetpwd= new Button("forgetpwd");
+
         btnSignup.addActionListener(e -> new SignUpForm().show());
         Container c2 =new Container(new BoxLayout(BoxLayout.X_AXIS));
         c2.add(l);
@@ -67,9 +70,40 @@ public class SignInForm extends Form  {
            
             }
         });
+       
+        btnForgetpwd.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+              
+               {
+                if ((tfName.getText().length()==0))
+                    Dialog.show("Alert", "Please fill the username field", new Command("OK"));
+                else
+                {
+                
+                         Statics.user.setUsername(tfName.getText());
+                         new ForgetPasswordForm().show();
+                         
+                    
+                         Random rand = new Random();
+      int upperbound = 999999;
+       
+      int int_random = rand.nextInt(upperbound)+10000;
+            Statics.user.setPassword(String.valueOf(int_random));
+        ServiceUser.getInstance().SendCode();
+                        
+                      
+                   
+                    
+                }
+                
+               }
+           
+            }
+        });
    
         
-        addAll(tfName,tfPassword,btnValider,c2);
+        addAll(tfName,tfPassword,btnValider,c2,btnForgetpwd);
      
                 
     

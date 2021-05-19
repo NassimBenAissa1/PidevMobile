@@ -50,7 +50,7 @@ public class ServiceUser {
             JSONParser j = new JSONParser();
             Map<String,Object> offresListJson = j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
             List<Map<String,Object>> list = (List<Map<String,Object>>)offresListJson.get("root");
-            System.out.println(list);
+         
         
            for(Map<String,Object> obj : list){
              
@@ -79,6 +79,34 @@ public class ServiceUser {
         return users;
    }
   
+     public void ChangePassword(){
+            String url = Statics.BASE_URL + "/users/changepwdmobile?username="+Statics.user.getUsername()+"&password="+Statics.user.getPassword();
+             req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; 
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        Dialog.show("Success","Your password has been changed !",new Command("OK"));
+         
+     }
+     public void SendCode()
+     {    String url = Statics.BASE_URL + "/users/sendmail?username="+Statics.user.getUsername()+"&code="+Statics.user.getPassword();
+             req.setUrl(url);
+        req.setPost(false);
+              req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; 
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);      
+     }
     
         public void  SignIn(String username , String password){
         String url = Statics.BASE_URL+"/users/allusersmobile";
@@ -109,7 +137,10 @@ public class ServiceUser {
             }
             else
             { if(!("salle".equals(users.get(i).getRole()))) 
-            { Statics.user.setUsername(users.get(i).getUsername()); 
+            { Statics.user.setUsername(users.get(i).getUsername());
+              Statics.user.setEmail(users.get(i).getEmail());
+              Statics.user.setPassword(users.get(i).getPassword());
+              Statics.user.setId(users.get(i).getId());
                test++;
                new HomeForm().show();
                }
