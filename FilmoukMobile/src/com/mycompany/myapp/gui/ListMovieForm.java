@@ -18,6 +18,7 @@ import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
+import com.codename1.ui.TextField;
 import com.codename1.ui.URLImage;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
@@ -41,22 +42,39 @@ import static java.util.concurrent.ThreadLocalRandom.current;
 public class ListMovieForm extends Form {
    Form current;
    static Movie activeMovie=null;
+   ArrayList<Movie> movies;
+   Container c =new Container(new BoxLayout(BoxLayout.Y_AXIS));
      public ListMovieForm(Form previous) {
          current = this;
          
-         ArrayList<Movie> movies;
+         
          Movie movie = new Movie();
          ServiceMovie sm= new ServiceMovie();
           ImageViewer img = null;
           Image image;
           Label label;
+          TextField searchbar=new TextField();
+          
+          
+          
+          
+          
+          add(searchbar);
+         
+                 
          
          movies=ServiceMovie.getInstance().getAllMovies();
+         
          System.out.println("TESTING --------------------------------------------------------");
          System.out.println(movies);
+         
+         
+         
          int i;
          
-         Container c =new Container(new BoxLayout(BoxLayout.Y_AXIS));
+         
+         
+         
          c.addPointerPressedListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent evt) {
@@ -64,7 +82,16 @@ public class ListMovieForm extends Form {
                                             }
                     });
          
-        
+         searchbar.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 ArrayList<Movie> moviez=ServiceMovie.getInstance().SearchMovie(searchbar.getText());
+               
+                new Searchedmovie(current,moviez).show();
+                //new ListMovieForm(current).show();
+             }
+             
+         });
           
          
       //   Image placeholder = Image.createImage(label.getIcon().getWidth(), label.getIcon().getWidth(), 0xbfc9d2);
@@ -72,8 +99,12 @@ public class ListMovieForm extends Form {
          int deviceWidth = Display.getInstance().getDisplayWidth();
          Image placeholder = Image.createImage(deviceWidth/5, deviceWidth /5, 0xbfc9d2); 
          EncodedImage encImage = EncodedImage.createFromImage(placeholder, false);
+         
+         
         
-         for (i = 0; i < movies.size(); i++) {
+       //if(searchbar.getText()==""){
+         for (i = 0; i <movies.size(); i++) {
+                   
              Container c2 =new Container(new BoxLayout(BoxLayout.X_AXIS));
              Label name=new Label(movies.get(i).getNom());
              Label lang=new Label(movies.get(i).getLang());
@@ -83,14 +114,9 @@ public class ListMovieForm extends Form {
              
              final Movie m=movies.get(i);
             
-            Button btnt = new Button("");
+            Button btnt = new Button("");            
             btnt.addActionListener(e -> new SingleMovie(current,m).show());
-                                  
-                    
-                    
-                    
-                                   
-          
+      
             c2.setLeadComponent(btnt);
              
              c2.add(URLImage.createToStorage(encImage, "Large_" + movies.get(i).getImgUrl(), movies.get(i).getImgUrl(), URLImage.RESIZE_SCALE));
@@ -101,13 +127,9 @@ public class ListMovieForm extends Form {
              
              c.add(c2);
              
-           
+         
          }
-         
-         
-         
-         
-         
+            
          System.out.println("****************");
          System.out.println(i);
          add(c);

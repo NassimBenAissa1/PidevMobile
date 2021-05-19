@@ -10,6 +10,8 @@ import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
+import com.codename1.ui.Command;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.events.ActionListener;
 import com.mycompany.myapp.entities.Movie;
 import com.mycompany.myapp.utils.Statics;
@@ -40,7 +42,7 @@ public class ServiceMovie {
         if (instance == null) {
             instance = new ServiceMovie();
         }
-        return instance;
+        return instance; 
     }
     
     
@@ -97,6 +99,8 @@ public class ServiceMovie {
       }
       
       
+      
+      
     
     public ArrayList<Movie> getAllMovies(){
         movies = new ArrayList<>();
@@ -115,5 +119,57 @@ public class ServiceMovie {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
         return movies;
+    }
+    
+    public ArrayList<Movie> Suggestions(Movie m){
+         String url = Statics.BASE_URL + "/films/suggest?idFilm="+m.getIdFilm();
+         movies = new ArrayList<>();
+         req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                movies = parseOffres(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+       // Dialog.show("success","rate created",new Command("OK"));
+        return movies;
+    }
+    
+    public ArrayList<Movie> SearchMovie(String s){
+         String url = Statics.BASE_URL + "/films/searchmobile?search=" +s;
+         
+         req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                movies = parseOffres(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        Dialog.show("success","movie found",new Command("OK"));
+        return movies;
+        //new SignInForm().show();
+    }
+    
+    public void SaveRate(Movie m){
+         String url = Statics.BASE_URL + "/films/saveratemob?note=" + m.getRated()+"&idm="+m.getIdFilm()+"&id="+1;
+         
+         req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; 
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        Dialog.show("success","rate created",new Command("OK"));
+        //new SignInForm().show();
     }
 }
