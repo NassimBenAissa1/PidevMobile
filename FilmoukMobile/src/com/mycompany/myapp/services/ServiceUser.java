@@ -136,7 +136,7 @@ public class ServiceUser {
         public void SignUp(User u) {
         
         String url = Statics.BASE_URL + "/users/addusermobile?username=" + u.getUsername() + "&email="+u.getEmail()+"&phone="+u.getPhone()+"&password="+u.getPassword()+
-                "&firstname="+u.getFname()+"&lastname="+u.getLname()+"&idcard="+u.getIdcard();
+        "&firstname="+u.getFname()+"&lastname="+u.getLname()+"&idcard="+u.getIdcard();
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
